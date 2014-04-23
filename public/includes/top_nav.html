@@ -1,0 +1,23 @@
+<div class="nav_bar">
+	<ul class="nav_bar_left">
+		<li><a href="index.shtml">Home</a></li>
+		<li><a href="articlelist.php">Articles</a></li>
+		<li><a href="aboutme.shtml">About Me</a></li>
+		<li><a href="guestbook.php">GuestBook</a></li>	
+		<?php if(isadmin()){ ?>
+		<li><a href="admin/article_new.php">New Article</a></li>
+		<li><a href="admin/icodes.php">ICodes</a></li>
+		<?php }?>
+	</ul>
+	<ul class="nav_bar_right">
+		<li>
+			<a style="padding:3;float:left" href="<?=(userid() == 0) ? "login.shtml" : "profile.php" ?>">
+				<img style="float:left" src="images/icons/icon_<?=userid()?>" width=34 height=34></img>
+			</a>
+			<a style="float:left" href="<?=(userid() == 0) ? "login.shtml" : "profile.php" ?>">
+				<?=username()?>
+			</a>
+		</li>
+	</ul>
+	<script language="javascript" type="text/javascript"  src="library/nav_bar.js"></script>
+</div>

@@ -12,3 +12,11 @@
 */
 
 Route::get('/weather/{location}', 'WeatherController@getWeather');
+Route::get('/', 'SiteController@showIndex');
+Route::get('/articles', 'SiteController@showArticleList');
+Route::get('/article/{id}', 'SiteController@showArticle');
+Route::post('/article', 'SiteController@postArticle');
+Route::get('/login', 'SiteController@showLogin');
+Route::post('/login', 'SiteController@authentication');
+Route::get('/profile', 'SiteController@profile');
+Route::get('/logout', 'SiteController@logout');
