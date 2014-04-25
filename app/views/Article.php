@@ -17,10 +17,10 @@
 				<p>Comments: </p>
 				<?php foreach ($comments as $comment) :  ?>
 				<?php	$c += 1; ?>
-				<?php	$uid = $comment->user->id;?>
+				<?php	$uid = ($comment->user) ? $comment->user->id : 0;?>
 				<div class="guestbook_title">
 					<img src="/images/icons/icon_<?php echo $uid; ?>" width=34 height=34></img>
-					<?php echo $comment->user->username; ?>
+					<?php echo ($comment->user) ? $comment->user->username : "Guest"; ?>
 					<span class="date"> <?php echo $comment->date; ?></span>
 				</div>
 				<div class="guestbook_content<?php echo ($c % 2) ;?>">
@@ -28,7 +28,7 @@
 				</div>
 				<?php endforeach; ?>
 				<br />
-			<form name="form" method="post" action="add_comment.php">
+			<form name="form" method="post" action="/comment">
 			Post a comment:<textarea name="comments"></textarea>
 				<input type="hidden" name="id" value="<?php echo $article->id; ?>">
 				<input type="submit" name="submit" value="Submit">

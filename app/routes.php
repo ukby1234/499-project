@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/weather/{location}', 'WeatherController@getWeather');
 Route::get('/', 'SiteController@showIndex');
-Route::get('/articles', 'SiteController@showArticleList');
-Route::get('/article/{id}', 'SiteController@showArticle');
-Route::post('/article', 'SiteController@postArticle');
-Route::get('/login', 'SiteController@showLogin');
-Route::post('/login', 'SiteController@authentication');
-Route::get('/profile', 'SiteController@profile');
-Route::get('/logout', 'SiteController@logout');
+Route::get('/articles', 'ArticleController@showArticleList');
+Route::get('/article/{id}', 'ArticleController@showArticle');
+Route::post('/article', 'ArticleController@postArticle');
+Route::post('/comment', 'ArticleController@postComment');
+Route::get('/login', 'UserController@showLogin');
+Route::post('/login', 'UserController@authentication');
+Route::get('/profile', 'UserController@profile');
+Route::get('/logout', 'UserController@logout');
+Route::post('/avatar','UserController@uploadAvatar');
+Route::get('/editor','AdminController@editor');
+Route::get('/aboutme','SiteController@aboutme');
+Route::get('/user','AdminController@newUser');
+Route::post('/user','AdminController@addUser');

@@ -2,15 +2,16 @@
 	<ul class="nav_bar_left">
 		<li><a href="/">Home</a></li>
 		<li><a href="/articles">Articles</a></li>
-		<li><a href="/aboutme.shtml">About Me</a></li>
+		<li><a href="/aboutme">About Me</a></li>
 		<?php if ($user && $user->id == 1): ?>
-		<li><a href="admin/article_new.php">New Article</a></li>
+		<li><a href="/editor">New Article</a></li>
+		<li><a href="/user">New User</a></li>
 		<?php endif;?>
 	</ul>
 	<ul class="nav_bar_right">
 		<li>
 			<a style="float:left" href="<?php echo (!$user ? "/login" : "/profile"); ?>">
-				<img style="float:left;vertical-align:middle" src="images/icons/icon_<?php echo (!$user ? 0 : $user->id); ?>" width=28 height=28></img>
+				<img style="float:left;vertical-align:middle" src="/images/icons/icon_<?php echo (!$user ? 0 : $user->id); ?>" width=28 height=28></img>
 				<?php echo ($user ? $user->username : "Guest");?>
 			</a>
 		</li>

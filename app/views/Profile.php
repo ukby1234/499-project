@@ -16,8 +16,15 @@
 			</h2>
 			<div class="content">
 				Name: <?php echo $user->username; ?><br />	
-				<form action="upload_avatar.php" method="post" enctype="multipart/form-data">
-					<label for="file">Upload new avatar:</label>
+				<form action="/avatar" method="post" enctype="multipart/form-data">
+					<?php if (Session::has('errors')):?>
+					<?php foreach (Session::get('errors')->all() as $message) : ?>
+					<p style="background-color:red;">
+						<?php echo $message; ?>
+					</p>
+					<?php endforeach; ?>
+					<?php endif; ?>
+					<label for="file">Upload new avatar:</label>	
 					<input type="file" name="file" id="file" /> 
 					<br />
 					<input type="submit" name="submit" value="Submit" />
