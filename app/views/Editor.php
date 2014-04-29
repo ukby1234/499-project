@@ -35,7 +35,7 @@
 				<br />
 				Content: <textarea id="canvas" name="ta" rows="10" cols="120"></textarea>
 				<br />
-				<input type="submit" name="submit">
+				<input type="submit" name="submit" value="Submit">
 				</form>
 				<iframe frameborder=0 name="dynamicframe" id="dynamicframe"></iframe>
 			</div>
